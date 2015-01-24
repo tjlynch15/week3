@@ -26,24 +26,24 @@ for station in stations:
 	#print(distance(station['latitude'], station['longitude']))
 	distances.append({'station': station['stationName'],
 	 'distance': distance(station['latitude'], station['longitude']),
-	  'available_docks': station['availableDocks']})
+	  'available_bikes': station['availableBikes']})
 
 
 min_dist = distances[0]['distance']
-min_station = distances[0]['station']
-min_bikes = distances[0]['available_docks']
+#min_station = distances[0]['station']
+#min_bikes = distances[0]['available_bikes']
 
 
 for entry in distances:
 	if entry['distance'] < min_dist:
  		min_dist = entry['distance']
  		min_station = entry['station']
- 		min_bikes = entry['available_docks']
+ 		min_bikes = entry['available_bikes']
 
 #print(min_station, min_dist, min_bikes)
 print()
 print('The closest station to Young is: ', min_station)
-print('Available bikes are: ', min_bikes)
+print('There are {0} bikes currently available.'.format(min_bikes))
 print()
 
 
